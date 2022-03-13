@@ -12,7 +12,7 @@ public class DemowebshopAPITest {
 
     @Test
     void addToCartTest() {
-        step("", () -> {
+        step("1. Проверяем корзину в магазине:", () -> {
             String document = given()
                     .filter(CustomAllureListener.withCustomTemplates())
                     .contentType("application/x-www-form-urlencoded")
@@ -26,7 +26,7 @@ public class DemowebshopAPITest {
             countCart = Integer.parseInt(cartCty) + 1;
         });
 
-        step("", () -> {
+        step("2. Добавляем товар в корзину:", () -> {
             given()
                     .filter(CustomAllureListener.withCustomTemplates())
                     .contentType("application/x-www-form-urlencoded; charset=UTF-8")
